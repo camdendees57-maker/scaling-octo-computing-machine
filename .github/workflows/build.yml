@@ -1,0 +1,32 @@
+name: Build BONELAB Mod
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore WallWalker.csproj
+
+      - name: Build
+        run: dotnet build WallWalker.csproj --configuration Release --no-restore
+
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
+        with:
+          name: WallWalker
+          path: bin/Release/net6.0/WallWalker.dll
+          if-no-files-found: error
