@@ -1,13 +1,12 @@
 using System.Reflection;
 using MelonLoader;
-using WallWalker;
 
-[assembly: AssemblyTitle(BuildInfo.Name)]
-[assembly: AssemblyDescription(BuildInfo.Description)]
+[assembly: AssemblyTitle(WallWalker.BuildInfo.Name)]
+[assembly: AssemblyDescription(WallWalker.BuildInfo.Description)]
 [assembly: AssemblyCompany("Camden Dees")]
-[assembly: AssemblyProduct(BuildInfo.Name)]
-[assembly: AssemblyVersion(BuildInfo.Version)]
-[assembly: AssemblyFileVersion(BuildInfo.Version)]
+[assembly: AssemblyProduct(WallWalker.BuildInfo.Name)]
+[assembly: AssemblyVersion(WallWalker.BuildInfo.Version)]
+[assembly: AssemblyFileVersion(WallWalker.BuildInfo.Version)]
 
-[assembly: MelonInfo(typeof(Main), BuildInfo.Name, BuildInfo.Version, BuildInfo.Author)]
+[assembly: MelonInfo(typeof(WallWalker.Main), WallWalker.BuildInfo.Name, WallWalker.BuildInfo.Version, WallWalker.BuildInfo.Author)]
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
