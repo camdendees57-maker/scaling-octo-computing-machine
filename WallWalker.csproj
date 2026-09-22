@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -9,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Stripped/publicized BONELAB Patch 6 assemblies for mod development. -->
     <PackageReference Include="Bonelab.GameLibs.Steam" Version="6.0.0" PrivateAssets="all" />
   </ItemGroup>
 </Project>
