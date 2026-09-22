@@ -26,7 +26,6 @@ internal sealed class Main : MelonMod
 
     private Vector3 _surfaceNormal = Vector3.up;
     private bool _attached;
-    private bool _originalBallLocoEnabled = true;
     private float _nextRigSearch;
 
     public override void OnInitializeMelon()
@@ -262,9 +261,6 @@ internal sealed class Main : MelonMod
         _attached = true;
         _surfaceNormal = normal.sqrMagnitude > 0.0001f ? normal.normalized : Vector3.up;
 
-        _originalBallLocoEnabled = _physicsRig.ballLocoEnabled;
-        _physicsRig.ballLocoEnabled = false;
-
         _gravityState.Clear();
 
         foreach (var rb in _physicsRig.selfRbs)
@@ -289,8 +285,6 @@ internal sealed class Main : MelonMod
 
         if (_physicsRig != null)
         {
-            _physicsRig.ballLocoEnabled = _originalBallLocoEnabled;
-
             foreach (var rb in _physicsRig.selfRbs)
             {
                 if (rb == null)
